@@ -1,0 +1,4 @@
+interface:
+  display_name: "Laravel Performance Safely"
+  short_description: "Measure, optimize, and verify Laravel performance safely"
+  default_prompt: "Use $laravel-performance-safely to investigate the slow flow, preserve its results, and prepare a measured, reversible improvement."
