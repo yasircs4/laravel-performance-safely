@@ -15,4 +15,3 @@ final class RequestMemo
     }
     public function forget(string $key): void { unset($this->entries[$key]); }
 }
-
