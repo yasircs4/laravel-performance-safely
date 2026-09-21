@@ -1,6 +1,8 @@
 ---
 name: laravel-performance-safely
 description: Diagnose and reduce repeated Laravel and Filament request work using comparable benchmarks, scoped reuse, query analysis, financial parity checks, and reversible deployments. Use for measured application slowness, not an automatic framework upgrade or server resize.
+metadata:
+  version: "1.0.0"
 ---
 
 # Laravel performance safely
