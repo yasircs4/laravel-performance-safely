@@ -19,3 +19,5 @@ Exit 0 means the comparison and any requested thresholds passed. Exit 2 rejects 
 The `status` field records success as 200 for HTTP samples. A CLI harness may use the same success marker after its assertions pass; label the context's `measurement` as CLI processing so this cannot be mistaken for an HTTP measurement.
 
 A preloaded aggregate does not help when display accessors ignore it and query the relationships again. Compare the rendered path to its existing authoritative accessor, including refunds, reversals, partial payments, overpayments, write-offs, soft deletion, and restricted roles. Preserve whether clamping occurs per payment, per pledge, or after a total; these are not interchangeable formulas.
+
+Threshold decisions use unrounded medians. The displayed percentage is rounded for readability only.

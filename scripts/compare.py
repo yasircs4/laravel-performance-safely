@@ -82,7 +82,7 @@ def main():
             raise ValueError('Target case missing from the benchmark')
         failures = []
         for row in result['comparisons']:
-            reduction = row['processing_reduction_percent']
+            reduction = (row['baseline_median_ms'] - row['candidate_median_ms']) / row['baseline_median_ms'] * 100
             if args.max_regression is not None and reduction < -args.max_regression:
                 failures.append(row['case'] + ': regression exceeds threshold')
             if args.min_reduction is not None and (not args.target_case or row['case'] in args.target_case) and reduction < args.min_reduction:

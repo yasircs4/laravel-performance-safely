@@ -63,6 +63,20 @@ class CommandTests(unittest.TestCase):
         self.assertEqual(process.returncode,3)
         self.assertEqual(json.loads(process.stdout)['threshold_failures'],['report: reduction below threshold'])
 
+    def test_threshold_uses_unrounded_measurements(self):
+        import subprocess, sys
+        root = Path(self.tmp.name)
+        before = copy.deepcopy(self.run)
+        after = copy.deepcopy(self.run)
+        for sample in before['samples']:
+            sample['duration_ms'] = 1000
+        for sample in after['samples']:
+            sample['duration_ms'] = 1200.04
+        (root/'before.json').write_text(json.dumps(before))
+        (root/'after.json').write_text(json.dumps(after))
+        process = subprocess.run([sys.executable, str(Path(__file__).parents[1]/'scripts/compare.py'), str(root/'before.json'), str(root/'after.json'), '--max-regression', '20'], capture_output=True, text=True)
+        self.assertEqual(process.returncode, 3)
+
     def test_rejects_malformed_objects(self):
         for invalid in [[], {'context':[], 'samples':[]}, {'context':self.run['context'],'samples':[None]}]:
             with self.subTest(invalid=invalid):

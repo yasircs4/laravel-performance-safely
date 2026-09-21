@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Apply performance thresholds to unrounded medians so display rounding cannot hide a regression just above the configured limit. Added a reproducing command-line check.
+
 ## 1.0.0
 
 - Initial Laravel-first workflow with measurement, lifecycle, financial parity, and safe release gates.

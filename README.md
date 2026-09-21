@@ -4,12 +4,12 @@ A practical agent skill for making Laravel applications faster while preserving 
 
 It helps you prove where time goes, make a narrow change, compare equivalent runs, and prepare a reversible release. It does not deploy code or change production automatically.
 
-## Install version 1.0.0
+## Install version 1.0.1
 
 Clone this public repository at the release tag into a new skill directory:
 
 ```sh
-git clone --branch v1.0.0 --depth 1 https://github.com/yasircs4/laravel-performance-safely.git "$HOME/.codex/skills/laravel-performance-safely"
+git clone --branch v1.0.1 --depth 1 https://github.com/yasircs4/laravel-performance-safely.git "$HOME/.codex/skills/laravel-performance-safely"
 ```
 
 For agents using the shared registry, use `$HOME/.agents/skills/laravel-performance-safely` as the destination instead. If either directory exists, review it before upgrading. Do not overwrite local changes. Restart or reload the agent's skill catalog, then invoke:
